@@ -1,0 +1,180 @@
+<main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Inner Page</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Inner Page</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="inner-page">
+      <div class="container-fluid" ng-app="myApp" ng-controller="pharmacyCtrl">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-body">
+              <h4 class="card-title">Issue Pharmacy</h4>
+                <!-- <h5 class="card-subtitle"> All bootstrap element classies </h5> -->
+              <form class="form-horizontal m-t-30">
+                <div class="row" id="patientlst">
+                  <div class="col-sm-12">
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead style="background:#87CEFA;">
+                          <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Patient Code</th>
+                            <th scope="col">Patient Name</th>
+                            <th scope="col">Date Of Birth</th>
+                            <th scope="col">Physician</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="patient in issuelist">
+                            <td>{{patient.tdate}}</td>
+                            <td>{{patient.code}}</td>
+                            <td>{{patient.name}}</td>
+                            <td>{{patient.dob}}</td>
+                            <td>{{patient.dname}}</td>
+                            <td>
+                              <button type="submit" ng-click="searchFunction(patient.tid)" class="btn btn-primary login-btn btn-block" style="background-color:#87CEFA; color:#808080;">View</button>
+                            </td>
+                          </tr>
+                        </tbody>  
+                      </table>
+                    </div>
+                  </div>  
+                </div>
+              <div  id="issueinfo" style="display:none;">
+                <div class="row">
+                  <div class="col-sm-6" >
+                    <div class="row">
+                      <div class="col-sm-6" >
+                  
+                      </div>
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <input class="form-control" type="text"  ng-model="tdate" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <label>Code</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <input class="form-control" type="text"  ng-model="code" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <label>Name</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <input class="form-control" type="text"  ng-model="pname" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <label>Date Of Birth</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <input class="form-control" type="text" ng-model="dob" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <label>Physician</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <input class="form-control" type="text" ng-model="dname" readonly>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="col-sm-6">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12" >
+                    <div class="form-group">
+                      <label>Treatment</label>
+                      <textarea class="form-control" row="15" id="treatment" ng-model="treatment" readonly></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                <button type="submit" ng-click="issueFunction()" class="btn btn-primary login-btn btn-block" style="background-color:#87CEFA; color:#808080;">Issue</button>
+                <button type="submit" ng-click="cancelFunction()" class="btn btn-primary login-btn btn-block" style="background-color:#FF0000; color:#808080;">Cancel</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+    <div style="height:30px;"></div>
+  </div>
+</section>
+
+</main><!-- End #main -->
+
+<style>
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9; 
+}
+
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+</style>

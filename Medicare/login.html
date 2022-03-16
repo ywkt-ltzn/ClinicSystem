@@ -1,0 +1,54 @@
+<main id="main" ng-app="myApp" ng-controller="loginCtrl">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Inner Page</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Inner Page</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="inner-page">
+      <div class="container-fluid">
+  <div class="row">
+    <div class = "col-2"></div>
+    <div class = "col-8">
+      <div class="login-form">
+        <form>
+          <h2 class="text-center">Sign in</h2>   
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control" name="username" placeholder="Username" ng-model="email" required="required">        
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+              <input type="password" class="form-control" name="password" placeholder="Password" ng-model="password" required="required">       
+            </div>
+          </div>        
+          <div class="form-group">
+            <button type="submit" ng-click="loginFunction()" class="btn btn-primary login-btn btn-block" style="background-color:#87CEFA;">Sign in</button>
+          </div>
+          <div class="clearfix">
+            <label class="pull-left checkbox-inline small" style="color:red;" id="message"></label>
+          </div>
+        </form>
+        <p class="text-center text-muted small">Don't have an account? <a href="#">Sign up here!</a></p>
+      </div>
+    </div>
+    <div class = "col-2"></div>
+  </div>
+  <div style="height:120px;"></div>
+</div>
+    </section>
+
+  </main><!-- End #main -->

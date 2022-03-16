@@ -1,0 +1,270 @@
+<main id="main" ng-app="myApp" ng-controller="patientrecordCtrl">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Inner Page</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Inner Page</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="inner-page">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+              <div class="card card-body">
+                  <h4 class="card-title">Patient Reocrds Form</h4>
+          <form autocomplete="off" class="form-horizontal m-t-30">
+            <div class="row" style="margin-top:100px;margin-bottom:230px;" id="patientcode">
+              <div class="autocomplete col-sm-8" >
+                <div class="form-group">
+                  <label>Patient code</label>
+                  <input id="myInput" type="text" class="form-control" name="myPatient" placeholder="Patient Code">
+                  <input type="hidden" id="pid" ng-model="pid" />
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <label>&nbsp;</label>
+                <button type="submit" ng-click="viewFunction()" class="btn btn-primary login-btn btn-block" style="background-color:#87CEFA; color:#808080;">View</button>
+              </div>
+              <div class="col-sm-2"></div>
+            </div>
+            <div class="row" id="patientrecord" style="display:none;">
+              <div class="col-sm-12" >
+              <!-- <div class="row">
+                <div class="col-sm-10"></div>
+                <div class="col-sm-2" >
+                  <div class="form-group">
+                    <button type="submit" onclick="Popup();" class="btn btn-primary login-btn btn-block" style="background-color:#87CEFA; color:#808080;">Print</button>
+                  </div>
+                </div>
+              </div> -->
+                <div class="row">
+                  <div class="col-sm-12" >
+                    <div class="form-group">
+                      <input class="form-control" type="text"  ng-model="code" readonly>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="row">
+                      <div class="col-sm-3" >
+                        <div class="form-group">
+                          <label>Name</label>
+                        </div>
+                      </div>  
+                      <div class="col-sm-9" >
+                        <div class="form-group">
+                          <input class="form-control" type="text"  ng-model="pname" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-3" >
+                        <div class="form-group">
+                          <label>Date Of Birth</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-9" >
+                        <div class="form-group">
+                          <input class="form-control" type="text" ng-model="dob" readonly>
+                        </div>
+                      </div>
+                    </div>  
+                    <div class="row">
+                      <div class="col-sm-3" >
+                        <div class="form-group">
+                          <label>Gender</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-9" >
+                        <div class="form-group">
+                          <input class="form-control" type="text" ng-model="gender" readonly>
+                        </div>
+                      </div>
+                    </div>  
+                    <div class="row">
+                      <div class="col-sm-3" >
+                        <div class="form-group">
+                          <label>Address</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-9" >
+                        <div class="form-group">
+                          <input class="form-control" type="text" ng-model="address" readonly>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="row">
+                      <div class="col-sm-3" >
+                        <div class="form-group">
+                          <label>Phone</label>
+                        </div>
+                      </div>  
+                      <div class="col-sm-9" >
+                        <div class="form-group">
+                          <input class="form-control" type="text" ng-model="phone" readonly>
+                        </div>
+                      </div>
+                    </div>  
+                    <div class="row">
+                      <div class="col-sm-3" >
+                        <div class="form-group">
+                          <label>Blood Type</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-9" >
+                        <div class="form-group">
+                          <input class="form-control" type="text" ng-model="bloodtype" readonly>
+                        </div>
+                      </div>
+                    </div>    
+                    <div class="row">
+                      <div class="col-sm-3" >
+                        <div class="form-group">
+                          <label>Weight</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-9" >
+                        <div class="form-group">
+                          <input class="form-control" type="text" ng-model="weight" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-3" >
+                        <div class="form-group">
+                          <label>Height</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-9" >
+                        <div class="form-group">
+                          <input class="form-control" type="text" ng-model="height" readonly>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr/>
+                <div class="row" ng-repeat="record in patientrec" >
+                  <div class="col-sm-12" style="margin-top:10px; padding-top:10px;">
+                    <div class="form-group">
+                      <input class="form-control" type="text" value={{record.tdate}} readonly>
+                    </div>
+                    <div class ="row">
+                      <div class="col-sm-3">
+                        <div class="form-group">
+                          <label>Physician</label>
+                          <input class="form-control" type="text"  value={{record.dname}} readonly>
+                        </div>
+                      </div>
+                      <div class="col-sm-9">
+                        <div class="form-group">
+                          <label>Speciality</label>
+                          <input class="form-control" type="text"  value='{{record.degree}}{{record.speciality}}' readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class ="row">
+                      <div class="col-sm-3">
+                        <div class="form-group">
+                          <label>History</label>
+                          <label>&nbsp;</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-9" style="height:100px;">
+                        <div class="form-group" style="padding:10px; width:100%;height:100%;background-color:#F8F8FF;">
+                          <label>{{record.history}}</label>
+                        </div>
+                      </div>
+                    </div>
+                    <br/>
+                    <div class ="row">
+                      <div class="col-sm-3">
+                        <div class="form-group">
+                          <label>Treatment</label>
+                          <label>&nbsp;</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-9" style="height:100px;">
+                        <div class="form-group" style="padding:10px; width:100%;height:100%;background-color:#F8F8FF;">
+                          <label>{{record.treatment}} </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr/>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</section>  
+</main><!-- End #main -->
+
+<style>
+
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9; 
+}
+
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+</style>
+<script>
+function Popup(data) {
+      var mywindow = window.open('', 'new div', 'height=400,width=600');
+      mywindow.document.write('<html><head><title></title>');
+      mywindow.document.write('<link rel="stylesheet" href="css/midday_receipt.css" type="text/css" />');
+      mywindow.document.write('</head><body >');
+      mywindow.document.write(document.getElementById('patientrecord').innerHTML);
+      mywindow.document.write('</body></html>');
+      mywindow.document.close();
+      mywindow.focus();
+      setTimeout(function(){mywindow.print();},1000);
+      //mywindow.close();
+
+      return true;
+}
+</script>

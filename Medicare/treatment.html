@@ -1,0 +1,160 @@
+<main id="main" ng-app="myApp" ng-controller="treatmentCtrl">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Inner Page</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Inner Page</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="inner-page">
+      <div class="container-fluid">
+        <div class="row">
+              <div class="col-12">
+                  <div class="card card-body">
+                      <h4 class="card-title">Treatment</h4>
+                      <!-- <h5 class="card-subtitle"> All bootstrap element classies </h5> -->
+              <form autocomplete="off" class="form-horizontal m-t-30">
+                <div class="row">
+                  <div class="autocomplete col-sm-6" >
+                    <div class="form-group">
+                      <label>Patient code</label>
+                      <input id="myInput" type="text" class="form-control" name="myPatient" placeholder="Patient Code">
+                      <input type="hidden" id="pid" ng-model="pid" />
+                    </div>
+                  </div>
+                  <div class="col-sm-6" >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6" >
+                    <div class="row">
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <label>Name</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <input class="form-control" type="text"  id="pname" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <label>Date Of Birth</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <input class="form-control" type="text" id="dob" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <label>Address</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <input class="form-control" type="text" id="address" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <label>Contact No.</label>
+                        </div>
+                      </div>
+                      <div class="col-sm-6" >
+                        <div class="form-group">
+                          <input class="form-control" type="text" id="pphone" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12" >
+                        <div class="form-group">
+                          <label style="font-size:12px; color:red;">{{message}}</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>    
+                </div>
+                <div class="row">
+                  <div class="col-sm-12" >
+                    <div class="form-group">
+                      <label>History</label>
+                      <textarea class="form-control" row="10" id="history" ng-model="history" ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12" >
+                    <div class="form-group">
+                      <label>Treatment</label>
+                      <textarea class="form-control" row="10" id="treatment" ng-model="treatment" ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button type="submit" ng-click="treatFunction()" class="btn btn-primary login-btn btn-block" style="background-color:#87CEFA; color:#808080;">Submit</button>
+                  <button type="submit" ng-click="cancelFunction()" class="btn btn-primary login-btn btn-block" style="background-color:#FF0000; color:#808080;">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+        <div style="height:30px;"></div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+<style>
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9; 
+}
+
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+</style>

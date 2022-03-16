@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Medicio Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap.min.css" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medicio - v2.1.0
+  * Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style type="text/css">
+  .login-form {
+    <!-- width: 385px;
+    margin: 30px auto; -->
+  }
+    .login-form form {        
+      margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .login-form h2 {
+        margin: 0 0 15px;
+    }
+    .form-control, .login-btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+    .input-group-addon .fa {
+        font-size: 18px;
+    }
+    .login-btn {
+        font-size: 15px;
+        font-weight: bold;
+    }
+  .social-btn .btn {
+    border: none;
+        margin: 10px 3px 0;
+        opacity: 1;
+  }
+    .social-btn .btn:hover {
+        opacity: 0.9;
+    }
+  .social-btn .btn-primary {
+        background: #507cc0;
+    }
+  .social-btn .btn-info {
+    background: #64ccf1;
+  }
+  .social-btn .btn-danger {
+    background: #df4930;
+  }
+    .or-seperator {
+        margin-top: 20px;
+        text-align: center;
+        border-top: 1px solid #ccc;
+    }
+    .or-seperator i {
+        padding: 0 10px;
+        background: #f7f7f7;
+        position: relative;
+        top: -11px;
+        z-index: 1;
+    }   
+</style>
+<body ng-app="myApp">
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <i class="icofont-clock-time"></i> Monday - Saturday, 8AM to 10PM
+      </div>
+      <div class="d-flex align-items-center" id="divuser" style="display: none;">
+        <i class="icofont-user"></i><span>{{name}}</span>
+      </div>
+      <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin6">
+        test user test user test user test user test user
+                    <ul class="navbar-nav float-left mr-auto">
+                        <li class="nav-item search-box">
+                            <a class="nav-link waves-effect waves-dark" href="javascript:void(0)">
+                                <div class="d-flex align-items-center">
+                                    <div class="ml-1 d-none d-sm-block">
+                                        <span>{{name}}</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <form class="app-search position-absolute">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter">
+                                <a class="srh-btn">
+                                    <i class="ti-close"></i>
+                                </a>
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav float-right" id="userdropdown" >
+            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/doctors/doctors-1.jpg" alt="user" class="rounded-circle" width="31"></a>
+                            <div class="dropdown-menu dropdown-menu-right user-dd animated" ng-controller= "logoutCtrl">
+                                <a class="dropdown-item" ><i class="ti-user m-r-5 m-l-5"></i> {{email}}</a>
+                                <a class="dropdown-item" ><i class="ti-wallet m-r-5 m-l-5"></i> {{userrole}}</a>
+                                <a class="dropdown-item" ng-click="logoutFunction()"><i class="ti-email m-r-5 m-l-5"></i> Log Out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <h1 class="logo mr-auto"><a href="index.html">Medicio</a></h1> -->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#/">Home</a></li>
+          <!-- <li class="active"><a href="#upload">File Upload</a></li> -->
+          <li id="navregister" style="display: none;"><a href="#register">Register</a></li>
+          <li id="navdoctor" style="display: none;" class="drop-down"><a href="#doctors">Doctors</a>
+            <ul>
+              <li><a href="#register_doctor">Doctor Registration</a></li>
+              <li><a href="#treatment">Treatment</a></li>
+            </ul>
+          </li>
+          <li id="navpatient" style="display: none;" class="drop-down"><a href="#doctors">Patients</a>
+            <ul>
+              <li id="navpatientreg" style="display: none;"><a href="#register_patient">Patient Registration</a></li>
+              <li id="navpatientrec" style="display: none;"><a href="#patientrecord">Patient Record</a></li>
+            </ul>
+          </li>
+          <li id="navappointment"  style="display: none;" class="drop-down"><a href="#doctors">Appointment</a>
+            <ul>
+              <li id="navappointmentmak" style="display: none;"><a href="#appointment">Make Appointment</a></li>
+              <li id="navappointmentlst" style="display: none;"><a href="#appointmentlst">Appointment List</a></li>
+            </ul>
+          </li>
+          <li id="navpharmacy"  style="display: none;"><a href="#pharmacy">Pharmacy</a></li>
+          <!-- <li><a href="#testpage">Test Page</a></li> -->
+          <!-- <li class="drop-down"><a href="">Drop Down</a>
+          <ul>
+            <li><a href="#">Drop Down 1</a></li>
+            <li class="drop-down"><a href="#">Deep Drop Down</a>
+              <ul>
+                <li><a href="#">Deep Drop Down 1</a></li>
+                <li><a href="#">Deep Drop Down 2</a></li>
+                <li><a href="#">Deep Drop Down 3</a></li>
+                <li><a href="#">Deep Drop Down 4</a></li>
+                <li><a href="#">Deep Drop Down 5</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Drop Down 2</a></li>
+            <li><a href="#">Drop Down 3</a></li>
+            <li><a href="#">Drop Down 4</a></li>
+          </ul>
+        </li> -->
+          <!-- <li><a href="#contact">Contact</a></li> -->
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <!-- <nav class="nav-menu d-none d-lg-block" id = "navdoctor" style="display: none;">
+        <ul>
+          <li class="active"><a href="#/">Home</a></li>
+          <li class="drop-down"><a href="#doctors">Doctors</a>
+            <ul>
+              <li><a href="#register_doctor">Doctor Registration</a></li>
+              <li><a href="#treatment">Treatment</a></li>
+            </ul>
+          </li>
+          <li class="drop-down"><a href="#doctors">Patients</a>
+            <ul>
+              <li><a href="#patientrecord">Patient Record</a></li>
+            </ul>
+          </li>
+          <li class="drop-down"><a href="#doctors">Appointment</a>
+            <ul>
+              <li><a href="#appointmentlst">Appointment List</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav> --><!-- .nav-menu -->
+
+      <!-- <nav class="nav-menu d-none d-lg-block" id = "navstaff" style="display: none;">
+        <ul>
+          <li class="active"><a href="#/">Home</a></li>
+          <li><a href="#register">Register</a></li>
+          <li class="drop-down"><a href="#doctors">Patients</a>
+            <ul>
+              <li><a href="#patientrecord">Patient Record</a></li>
+            </ul>
+          </li>
+          <li class="drop-down"><a href="#doctors">Appointment</a>
+            <ul>
+              <li><a href="#appointment">Make Appointment</a></li>
+              <li><a href="#appointmentlst">Appointment List</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav> --><!-- .nav-menu -->
+
+      <!-- <nav class="nav-menu d-none d-lg-block" id = "navpharm" style="display: none;">
+        <ul>
+          <li class="active"><a href="#/">Home</a></li>
+          <li><a href="#pharmacy">Pharmacy</a></li>
+        </ul>
+      </nav> --><!-- .nav-menu -->
+      <a href="#onlineapt" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+      <div id="divlogin"><a href="#login" class="appointment-btn scrollto"><span class="d-none d-md-inline">Log In</span></a></div>
+      <div id="divlogout" style="display: none;"  ng-controller= "logoutCtrl"><a href="#login" class="appointment-btn scrollto"  ng-click="logoutFunction()"><span class="d-none d-md-inline">Log Out</span></a></div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <nav class="navbar top-navbar navbar-expand-md navbar-light" style="background:#87CEFA;">
+                <div class="navbar-header" data-logobg="skin5">
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
+                        <i class="ti-menu ti-close"></i>
+                    </a>
+                    <div class="navbar-brand">
+                        <a href="index.html" class="logo">
+                            <b class="logo-icon">
+                                <img src="assets/img/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <img src="assets/img/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            </b>
+                            <span class="logo-text" style="color:#ADD8E6">
+                                <label>Chan Myae Hospital</label>
+                            </span>
+                        </a>
+                    </div>                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="ti-more"></i>
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin6">
+                    <ul class="navbar-nav float-left mr-auto">
+                        <li class="nav-item search-box">
+                            <a class="nav-link waves-effect waves-dark" href="javascript:void(0)">
+                                <div class="d-flex align-items-center">
+                                    <div class="ml-1 d-none d-sm-block">
+                                        <span>{{name}}</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <form class="app-search position-absolute">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter">
+                                <a class="srh-btn">
+                                    <i class="ti-close"></i>
+                                </a>
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav float-right" id="userdropdown">
+            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/doctors/doctors-1.jpg" alt="user" class="rounded-circle" width="31"></a>
+                            <div class="dropdown-menu dropdown-menu-right user-dd animated" ng-controller= "logoutCtrl">
+                                <a class="dropdown-item" ><i class="ti-user m-r-5 m-l-5"></i> {{email}}</a>
+                                <a class="dropdown-item" ><i class="ti-wallet m-r-5 m-l-5"></i> {{userrole}}</a>
+                                <a class="dropdown-item" ng-click="logoutFunction()"><i class="ti-email m-r-5 m-l-5"></i> Log Out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+  <div ng-view></div>
+  
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>Medicare</h3>
+              <p>
+                Pun Hlaing Street <br>
+                Hlaing Thar Yar, Yangon, Myanmar<br><br>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <!-- <h4>Useful Links</h4> -->
+            <p>
+                <strong>Phone:</strong> +95 1 368 4323<br>
+                <strong>Email:</strong> phsh@phsh.com.mm<br>
+              </p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <!-- <h4>Our Services</h4> -->
+            <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+          </div>
+ 
+          <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Medicare</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
+        Designed by <a href="https://bootstrapmade.com/">nay</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+  <!-- <script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script data-require="angular.js@*" data-semver="1.3.1" src="//code.angularjs.org/1.3.1/angular.js"></script>
+ -->
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Table JS File -->
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/moment.js"></script>
+  <script src="assets/js/autocomplete.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/fileupload.js"></script>
+  
+
+  <!-- <script src="assets/libs/jquery/dist/jquery.min.js"></script> -->
+  <!-- <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
+  <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="assets/extra-libs/sparkline/sparkline.js"></script
+  <script src="assets/js/waves.js"></script>
+  <script src="assets/js/sidebarmenu.js"></script>
+  <script src="assets/js/custom.min.js"></script>
+  <script src="assets/js/moment.js"></script>
+  <script src="assets/js/autocomplete.js"></script> -->
+
+</body>
+
+</html>

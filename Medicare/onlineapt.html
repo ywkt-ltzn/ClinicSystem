@@ -1,0 +1,105 @@
+<main id="main" ng-app="myApp" ng-controller="patientCtrl">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Make An Appointment</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Online Appointment</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section id="appointment" class="appointment section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Make an Appointment</h2>
+          <p>Please enter your registration code for making appointment. If you are not registered patient, just fill your name and phone.</p>
+        </div>
+
+        <form  role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+          <div class="form-row">
+            <div class="col-md-4 form-group ">
+              <input type="text" name="name" class="form-control" id="myCode" placeholder="Your Code here ... " data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="autocomplete col-sm-6" style="display: none;">
+              <div class="form-group">
+                <label>Patient code</label>
+                <input id="myInput" type="text" class="form-control" name="myPatient" placeholder="Patient Code">
+                <input type="hidden" id="pid" ng-model="pid" />
+              </div>
+            </div>
+            <div class="col-md-4 form-group">
+              <input type="text" name="name" class="form-control" id="pname" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group">
+              <input type="tel" class="form-control" name="phone" id="pphone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <input type="hidden" name="pid" id="pid">
+          </div>
+          <div class="form-row">
+            <div class="col-md-4 form-group">
+              <!-- <select name="doctor" id="doctor" class="form-control">
+                <option value="">Select Doctor</option>
+                <option value="Doctor 1">Doctor 1</option>
+                <option value="Doctor 2">Doctor 2</option>
+                <option value="Doctor 3">Doctor 3</option>
+              </select>
+ -->          <!-- <select class="form-control" name="singleSelect" id="singleSelect" ng-model="doctorselect" ng-options="item.name for item in doctorlst track by item.did" ng-change="doctorchange()">
+<option value="" disabled selected style="display: none;"> -- Please Select Doctor -- </option>
+</select> -->
+              <select class="form-control" name="singleSelect" id="singleSelect" ng-model="doctorselect" ng-change="doctorchange()">
+                  <option value="" disabled selected style="display: none;"> -- Please Select Doctor -- </option>
+                  <option ng-repeat="x in doctorlst" value="{{x.did}}">{{x.name}}</option>
+                  <div class="validate"></div>
+              </select>
+            </div>
+            <div class="col-md-4 form-group">
+              <!-- <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars"> -->
+              <input type="date" name="aptdate" id="aptdate" ng-model="dob" class="form-control" min="1900-01-01" max=new Date() placeholder="Appointment Date"  data-rule="required">
+              <div class="validate"></div>
+            </div>
+            
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12" style="text-align: center;">
+              <!-- <textarea class="form-control" id="doctorinfo" name="doctorinfo" ng-model="doctorinfo" rows="2" placeholder="" readonly></textarea> -->
+              <label class="pull-left checkbox-inline" id="doctorinfo"></label><br/>
+              <label style="font-size: 12px;" id="doctortime"></label>
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+            <div class="validate"></div>
+          </div>
+
+          <div class="mb-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit" ng-click="appointmentFunction()">Make an Appointment</button></div>
+        </form>
+
+        <form  role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+          
+          
+            
+          
+          
+        </form>
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->

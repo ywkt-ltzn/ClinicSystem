@@ -1,0 +1,171 @@
+<main id="main" ng-app="myApp" ng-controller="registerCtrl">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Inner Page</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Inner Page</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="inner-page">
+      <div class="container-fluid">
+  <div class="row">
+        <div class="col-12">
+            <div class="card card-body">
+                <h4 class="card-title">Patient Registration Forms</h4>
+                <div class="row" id="patientlst">
+          <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-10"></div>
+            <div class="col-sm-2">
+              <button type="submit" ng-click="editpatientFunction(0)" class="btn btn-primary login-btn btn-block" style="background-color:#87CEFA; color:#808080;">New</button>
+            </div>
+          </div><br/>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead style="background:#87CEFA;">
+                            <tr>
+                <th scope="col">Code</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Phone</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Address</th>
+                <th scope="col">Blood Type</th>
+                <th scope="col">Weight</th>
+                <th scope="col">Height</th>
+                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+            <tbody>
+                            <tr ng-repeat="user in patient_lst">
+                                <td>{{user.code}}</td>
+                <td>{{user.name}}</td>
+                                <td>{{user.phone}}</td>
+                <td>{{user.dob}}</td>
+                <td>{{user.address}}</td>
+                <td>{{user.bloodtype}}</td>
+                <td>{{user.weight}}</td>
+                <td>{{user.height}}</td>
+                <td>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <button type="submit" ng-click="editpatientFunction(user.pid)" class="btn btn-primary login-btn btn-block" style="background-color:#87CEFA; color:#808080;">Edit</button>
+                    </div>
+                    <div class="col-sm-6">
+                      <button type="submit" ng-click="deletepatientFunction(user.uid,user.pid)" class="btn btn-primary login-btn btn-block" style="background-color:#FF0000; color:#808080;">Delete</button>
+                    </div>
+                  </div>
+                </td>
+                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+        
+            </div>
+          </div>
+          </div>
+        </div>
+                
+        <div id="patientinfo" style="display:none;">
+          <form class="form-horizontal m-t-30">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" id="name" ng-model="username" class="form-control" value="George deo...">
+            </div>
+            <!-- <div class="form-group">
+              <label for="example-email">Email <span class="help"> e.g. "example@gmail.com"</span></label>
+              <input type="email" id="email" ng-model="useremail" name="example-email" class="form-control">
+            </div> -->
+            <div class="form-group">
+              <label for="phone">Phone <span class="help"> e.g. "959.."</span></label>
+              <input type="text" id="phone" ng-model="phone" name="phone" class="form-control" placeholder="959*********">
+            </div>
+            <div class="form-group row p-t-20">
+              <div class="col-sm-4">
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="gender1" name="gender" ng-model="gender" value="0" class="custom-control-input">
+                  <label class="custom-control-label" for="gender1">Male</label>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="gender2" name="gender" ng-model="gender" value="1" class="custom-control-input">
+                  <label class="custom-control-label" for="gender2">Female</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Date Of Birth</label>
+              <input type="date" name="dob" id="dob" ng-model="dob" class="form-control" min="1900-01-01" max=new Date()   data-rule="required">
+            </div>
+            <div class="form-group">
+              <label>Address</label>
+              <textarea class="form-control" id="address" ng-model="address" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Weight (lb)</label>
+              <input type="text" id="weight" ng-model="weight" class="form-control" value="George deo...">
+            </div>
+            <div class="form-group">
+              <label>Height (cm)</label>
+              <input type="text" id="height" ng-model="height" class="form-control" value="George deo...">
+            </div>
+            <div class="form-group">
+              <label>Select Blood Type</label>
+              <select class="custom-select col-12" id="inlineFormCustomSelect" ng-model="bloodtype">
+                <option selected>Choose Blood Type...</option>
+                <option value="A">A</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB">AB</option>
+                <option value="O">O</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button type="submit" ng-click="regpatientFunction()" class="btn btn-primary login-btn btn-block" style="background-color:#87CEFA; color:#808080;">Register</button>
+              <button type="submit" ng-click="cancelFunction()" class="btn btn-primary login-btn btn-block" style="background-color:#FF0000; color:#808080;">Cancel</button>
+            </div>
+          </form>
+        
+        </div>
+        <div id="patientcode" style="display:none;">
+          <div class="row">
+            <div class="col-sm-6">
+              <label>Code No.</label>
+              <input type="text" class="form-control" value={{p_code}} readonly />
+            </div>
+            <div class="col-sm-6"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <label>Patient Name</label>
+              <input type="text" class="form-control" value={{p_name}} readonly />
+            </div>
+            <div class="col-sm-6">
+              <label>Date of Birth</label>
+              <input type="text" class="form-control" value={{dob}} readonly />
+            </div>
+          </div>
+          <br/>
+          <div class="row form-group" style="padding:10px;" >
+            <button type="submit" ng-click="cancelFunction()" class="btn btn-primary login-btn btn-block" style="background-color:#FF0000; color:#808080;">Cancel</button>
+          </div>
+          <div style="height:200px;"></div>
+        </div>
+      </div>
+        </div>
+    </div>
+</div>
+    </section>
+
+  </main><!-- End #main -->
